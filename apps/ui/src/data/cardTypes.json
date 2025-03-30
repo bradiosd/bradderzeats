@@ -1,0 +1,60 @@
+{
+  "cardTypes": [
+    {
+      "id": "meal-prep",
+      "name": "Meal Prep",
+      "icon": "🍽️"
+    },
+    {
+      "id": "desserts",
+      "name": "Desserts",
+      "icon": "🍰"
+    },
+    {
+      "id": "uber",
+      "name": "Uber",
+      "icon": "🚗"
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "title": "COOK Food Service",
+      "types": [
+        "meal-prep",
+        "desserts"
+      ],
+      "description": "Fresh, chef-prepared meals delivered to your door. Get 15% off your first order.",
+      "background": "/affiliates/cookfood-bg.jpg",
+      "logo": {
+        "src": "/affiliates/cookfood-logo.png",
+        "alt": "COOK Food Service Logo",
+        "size": {
+          "width": "120px",
+          "height": "auto"
+        },
+        "invert": true
+      },
+      "url": "https://www.cookfood.net"
+    },
+    {
+      "id": 2,
+      "title": "Refer a Friend",
+      "types": [
+        "meal-prep"
+      ],
+      "description": "Share COOK with friends and get 15% off for each friend who orders for the first time.",
+      "background": "/affiliates/cookfood-bg.jpg",
+      "logo": {
+        "src": "/affiliates/cookfood-logo.png",
+        "alt": "COOK Food Service Logo",
+        "size": {
+          "width": "100px",
+          "height": "auto"
+        },
+        "invert": true
+      },
+      "url": "https://cookfood.mention-me.com/m/ol/sd4iv-brad-bird"
+    }
+  ]
+}
