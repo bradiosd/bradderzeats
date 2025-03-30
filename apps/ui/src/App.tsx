@@ -66,8 +66,8 @@ function App() {
                 }`}
             >
               <span className="flex items-center space-x-2">
-                <span>{cardData.cardTypes.find(type => type.name === selectedType)?.icon || '🍽️'}</span>
-                <span>{cardData.cardTypes.find(type => type.name === selectedType)?.name || 'All'}</span>
+                <span>{cardData.cardTypes.find(type => type.id === selectedType)?.icon || '🍽️'}</span>
+                <span>{cardData.cardTypes.find(type => type.id === selectedType)?.name || 'All'}</span>
               </span>
               {FaChevronDown({ size: 20, className: `transform transition-transform duration-200 ${isFilterOpen ? 'rotate-180' : ''}` })}
             </button>
@@ -90,12 +90,12 @@ function App() {
                 </button>
                 {cardData.cardTypes.map((type) => (
                   <button
-                    key={type.name}
+                    key={type.id}
                     onClick={() => {
-                      setSelectedType(type.name);
+                      setSelectedType(type.id);
                       setIsFilterOpen(false);
                     }}
-                    className={`w-full px-4 py-2 text-left hover:bg-opacity-10 hover:bg-brand-green flex items-center space-x-2 ${selectedType === type.name
+                    className={`w-full px-4 py-2 text-left hover:bg-opacity-10 hover:bg-brand-green flex items-center space-x-2 ${selectedType === type.id
                       ? 'bg-brand-green text-white'
                       : isDarkMode
                         ? 'text-brand-light'
@@ -125,9 +125,9 @@ function App() {
             </button>
             {cardData.cardTypes.map((type) => (
               <button
-                key={type.name}
-                onClick={() => setSelectedType(type.name)}
-                className={`px-4 py-2 rounded-full flex items-center space-x-2 ${selectedType === type.name
+                key={type.id}
+                onClick={() => setSelectedType(type.id)}
+                className={`px-4 py-2 rounded-full flex items-center space-x-2 ${selectedType === type.id
                   ? 'bg-brand-green text-white'
                   : isDarkMode
                     ? 'bg-brand-black text-brand-light hover:bg-brand-dark-green'
@@ -258,7 +258,7 @@ function App() {
               </a>
             </div>
             <p className={`text-sm ${isDarkMode ? 'text-brand-light/40' : 'text-brand-dark-green/40'}`}>
-              © {new Date().getFullYear()} Bradders Eats. All rights reserved.
+              © {new Date().getFullYear()} Bradderz Eats. All rights reserved.
             </p>
           </div>
         </div>

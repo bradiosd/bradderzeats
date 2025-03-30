@@ -17,6 +17,7 @@ export interface Card {
 }
 
 export interface CardType {
+  id: string;
   name: string;
   icon: string;
 }
