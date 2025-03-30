@@ -1,23 +1,6 @@
 import React from 'react';
 import { Dialog } from '@headlessui/react';
-
-interface Card {
-  id: number;
-  title: string;
-  types: string[];
-  description: string;
-  background: string;
-  logo: {
-    src: string;
-    alt: string;
-    size: {
-      width: string;
-      height: string;
-    };
-    invert: boolean;
-  };
-  url: string;
-}
+import { Card } from '../types';
 
 interface ModalProps {
   isOpen: boolean;
@@ -82,7 +65,10 @@ function Modal({ isOpen, onClose, card, isDarkMode }: ModalProps) {
             <Dialog.Title className={`text-2xl font-bold ${isDarkMode ? 'text-brand-light' : 'text-brand-dark-green'}`}>
               {card.title}
             </Dialog.Title>
-            <p className={`mt-4 ${isDarkMode ? 'text-brand-light/80' : 'text-brand-dark-green/80'}`}>
+            <p className={`mt-4 text-lg font-medium ${isDarkMode ? 'text-brand-light' : 'text-brand-dark-green'}`}>
+              {card.tagline}
+            </p>
+            <p className={`mt-4 whitespace-pre-line ${isDarkMode ? 'text-brand-light/80' : 'text-brand-dark-green/80'}`}>
               {card.description}
             </p>
 
@@ -106,7 +92,7 @@ function Modal({ isOpen, onClose, card, isDarkMode }: ModalProps) {
                   : 'bg-brand-dark-green text-white hover:bg-brand-green'
                   }`}
               >
-                Visit
+                Claim
               </a>
             </div>
           </div>

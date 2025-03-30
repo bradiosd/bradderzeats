@@ -18,32 +18,12 @@
   ],
   "cards": [
     {
-      "id": 1,
-      "title": "COOK Food Service",
-      "types": [
-        "meal-prep",
-        "desserts"
-      ],
-      "description": "Fresh, chef-prepared meals delivered to your door. Get 15% off your first order.",
-      "background": "/affiliates/cookfood-bg.jpg",
-      "logo": {
-        "src": "/affiliates/cookfood-logo.png",
-        "alt": "COOK Food Service Logo",
-        "size": {
-          "width": "120px",
-          "height": "auto"
-        },
-        "invert": true
-      },
-      "url": "https://www.cookfood.net"
-    },
-    {
-      "id": 2,
       "title": "Refer a Friend",
       "types": [
         "meal-prep"
       ],
-      "description": "Share COOK with friends and get 15% off for each friend who orders for the first time.",
+      "tagline": "Share COOK with friends and get 15% off for each friend who orders for the first time.",
+      "description": "Award-Winning Frozen Meals & Puddings with home Delivery, free Click & Collect, Subscribe or visit your local COOK Shop or Stockist.",
       "background": "/affiliates/cookfood-bg.jpg",
       "logo": {
         "src": "/affiliates/cookfood-logo.png",
