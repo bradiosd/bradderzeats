@@ -3,7 +3,9 @@ export interface Card {
   types: string[];
   tagline: string;
   description: string;
-  background: string;
+  backgroundColor: string;
+  backgroundImage: string | null;
+  overlayOpacity: number;
   logo: {
     src: string;
     alt: string;

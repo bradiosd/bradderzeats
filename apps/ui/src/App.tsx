@@ -170,14 +170,22 @@ function App() {
                     } border rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow duration-200 relative`}
                 >
                   {/* Background Image */}
-                  <div className="relative h-48">
-                    <img
-                      src={card.background}
-                      alt=""
-                      className="w-full h-full object-cover"
-                    />
+                  <div
+                    className="relative h-48"
+                    style={{ backgroundColor: card.backgroundColor }}
+                  >
+                    {card.backgroundImage && (
+                      <img
+                        src={card.backgroundImage}
+                        alt=""
+                        className="w-full h-full object-cover"
+                      />
+                    )}
                     {/* Dark Overlay */}
-                    <div className="absolute inset-0 bg-black/50" />
+                    <div
+                      className="absolute inset-0"
+                      style={{ backgroundColor: `rgba(0, 0, 0, ${card.overlayOpacity})` }}
+                    />
                     {/* Logo Overlay */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <img

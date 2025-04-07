@@ -38,14 +38,22 @@ function Modal({ isOpen, onClose, card, isDarkMode }: ModalProps) {
           </button>
 
           {/* Background Image */}
-          <div className="relative h-64">
-            <img
-              src={card.background}
-              alt=""
-              className="w-full h-full object-cover"
-            />
+          <div
+            className="relative h-64"
+            style={{ backgroundColor: card.backgroundColor }}
+          >
+            {card.backgroundImage && (
+              <img
+                src={card.backgroundImage}
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            )}
             {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black/50" />
+            <div
+              className="absolute inset-0"
+              style={{ backgroundColor: `rgba(0, 0, 0, ${card.overlayOpacity})` }}
+            />
             {/* Logo Overlay */}
             <div className="absolute inset-0 flex items-center justify-center">
               <img

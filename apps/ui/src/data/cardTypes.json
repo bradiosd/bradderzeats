@@ -14,6 +14,11 @@
       "id": "uber",
       "name": "Uber",
       "icon": "🚗"
+    },
+    {
+      "id": "cashback",
+      "name": "Cashback",
+      "icon": "💰"
     }
   ],
   "cards": [
@@ -24,7 +29,9 @@
       ],
       "tagline": "Share COOK with friends and get 15% off for each friend who orders for the first time.",
       "description": "Award-Winning Frozen Meals & Puddings with home Delivery, free Click & Collect, Subscribe or visit your local COOK Shop or Stockist.",
-      "background": "/affiliates/cookfood-bg.jpg",
+      "backgroundColor": "#F8F3ED",
+      "backgroundImage": "/affiliates/cookfood-bg.jpg",
+      "overlayOpacity": 0.7,
       "logo": {
         "src": "/affiliates/cookfood-logo.png",
         "alt": "COOK Food Service Logo",
@@ -35,6 +42,27 @@
         "invert": true
       },
       "url": "https://cookfood.mention-me.com/m/ol/sd4iv-brad-bird"
+    },
+    {
+      "title": "TopCashback - £10 Sign Up Bonus",
+      "types": [
+        "cashback"
+      ],
+      "tagline": "Get £10 bonus when you sign up using this referral link",
+      "description": "Join the UK's highest paying cashback site. Earn money back on your online shopping from over 6,000 retailers.",
+      "backgroundColor": "#FFFFFF",
+      "backgroundImage": null,
+      "overlayOpacity": 0.1,
+      "logo": {
+        "src": "/affiliates/topcashback-logo.svg",
+        "alt": "TopCashback Logo",
+        "size": {
+          "width": "300px",
+          "height": "auto"
+        },
+        "invert": false
+      },
+      "url": "https://www.topcashback.co.uk/ref/bb1990"
     }
   ]
 }
