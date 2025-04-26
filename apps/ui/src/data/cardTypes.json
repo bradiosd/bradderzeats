@@ -91,10 +91,19 @@
       "overlayOpacity": 0,
       "images": [
         {
+          "src": "/amazon/B07P9ZBV31/3.png",
+          "alt": "GoPro Hero 12 Black Side View",
+          "size": {
+            "width": "auto",
+            "height": "auto"
+          },
+          "invert": false
+        },
+        {
           "src": "/amazon/B07P9ZBV31/1.png",
           "alt": "GoPro Hero 12 Black Main View",
           "size": {
-            "width": "300px",
+            "width": "auto",
             "height": "auto"
           },
           "invert": false
@@ -103,16 +112,7 @@
           "src": "/amazon/B07P9ZBV31/2.png",
           "alt": "GoPro Hero 12 Black Front View",
           "size": {
-            "width": "300px",
-            "height": "auto"
-          },
-          "invert": false
-        },
-        {
-          "src": "/amazon/B07P9ZBV31/3.png",
-          "alt": "GoPro Hero 12 Black Side View",
-          "size": {
-            "width": "300px",
+            "width": "auto",
             "height": "auto"
           },
           "invert": false

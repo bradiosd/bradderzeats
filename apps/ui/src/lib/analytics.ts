@@ -10,12 +10,6 @@ declare global {
 export const initializeGoogleAnalytics = (measurementId: string) => {
   if (!measurementId) return;
 
-  // Skip in development
-  if (process.env.NODE_ENV !== 'production') {
-    console.log('Analytics disabled in development');
-    return;
-  }
-
   // Add Google Analytics script
   const script = document.createElement('script');
   script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;

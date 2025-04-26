@@ -1,7 +1,7 @@
 // Application configuration
 export const config = {
-  // Base API URL - change based on environment
-  apiUrl: process.env.REACT_APP_API_URL || 'http://localhost:3000/api',
+  // Base API URL
+  apiUrl: 'http://localhost:3000/api',
 
   // App metadata
   appName: 'Bradderz Eats',
@@ -23,7 +23,7 @@ export const config = {
 
   // Analytics configuration
   analytics: {
-    enabled: process.env.NODE_ENV === 'production',
-    measurementId: process.env.REACT_APP_GA_MEASUREMENT_ID,
+    enabled: true,
+    measurementId: 'G-5W6T9BXYKV',
   }
 }; 
