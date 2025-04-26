@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Dialog } from '@headlessui/react';
 import { useTheme } from './theme-provider';
 
@@ -10,21 +10,6 @@ interface TikTokModalProps {
 function TikTokModal({ isOpen, onClose }: TikTokModalProps) {
   const { theme } = useTheme();
   const isDarkMode = theme === 'dark';
-
-  useEffect(() => {
-    // Load TikTok embed script when modal opens
-    if (isOpen) {
-      const script = document.createElement('script');
-      script.src = 'https://www.tiktok.com/embed.js';
-      script.async = true;
-      document.body.appendChild(script);
-
-      return () => {
-        // Clean up script when modal closes
-        document.body.removeChild(script);
-      };
-    }
-  }, [isOpen]);
 
   return (
     <Dialog
@@ -51,16 +36,16 @@ function TikTokModal({ isOpen, onClose }: TikTokModalProps) {
             </svg>
           </button>
 
-          {/* TikTok Video */}
+          {/* Video Player */}
           <div className="p-4">
-            <blockquote
-              className="tiktok-embed"
-              cite="https://www.tiktok.com/@bradderzeats/video/7497553588806339862"
-              data-video-id="7497553588806339862"
-              style={{ maxWidth: '605px', minWidth: '325px' }}
-            >
-              <section></section>
-            </blockquote>
+            <video
+              className="w-full rounded-lg"
+              controls
+              autoPlay
+              loop
+              playsInline
+              src="https://v45.tiktokcdn-eu.com/b51b82198b0f9368b2c119005ef57961/680e1f82/video/tos/no1a/tos-no1a-ve-0068-no/o03h4ZkEKwQ1DXeoAWgIRYFFTf4zEsEkFDsBgW/?a=1233&bti=NDU3ZjAwOg%3D%3D&ch=0&cr=3&dr=0&lr=tiktok_m&cd=0%7C0%7C1%7C&cv=1&br=4050&bt=2025&cs=0&ds=3&ft=bCkKJmwKPD12NQGgHh-Uxf15hY3W3wv25XcAp&mime_type=video_mp4&qs=0&rc=Nzo5aDk2ZjM1NmczN2ZkPEBpM3Q1anU5cmZkMzMzbzczNUA1YTYvMWJhNTAxYTVjLl8vYSNvamppMmQ0ZjNhLS1kMTFzcw%3D%3D&vvpl=1&l=202504261213054667AECFD88BE7A56D39&btag=e0008d000"
+            />
           </div>
         </Dialog.Panel>
       </div>
