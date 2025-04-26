@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CardGrid from './components/CardGrid';
 import Modal from './components/Modal';
+import TikTokModal from './components/TikTokModal';
 import { Card } from './types';
 import { config } from './config';
 import { initializeGoogleAnalytics } from './lib/analytics';
@@ -17,9 +18,22 @@ const cardData = data as any;
 const AppContent: React.FC = () => {
   const [selectedCard, setSelectedCard] = useState<Card | null>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [showTikTokModal, setShowTikTokModal] = useState<boolean>(false);
 
   // Use analytics hook
   useAnalytics();
+
+  useEffect(() => {
+    // Check if user has seen the TikTok video in the last minute
+    const lastVisit = localStorage.getItem('lastVisit');
+    const currentTime = new Date().getTime();
+    const oneMinuteAgo = currentTime - (60 * 1000); // 60 seconds in milliseconds
+
+    if (!lastVisit || parseInt(lastVisit) < oneMinuteAgo) {
+      setShowTikTokModal(true);
+      localStorage.setItem('lastVisit', currentTime.toString());
+    }
+  }, []);
 
   const handleSelectCard = (card: Card) => {
     setSelectedCard(card);
@@ -38,11 +52,17 @@ const AppContent: React.FC = () => {
       </main>
       <Footer />
 
-      {/* Modal */}
+      {/* Card Modal */}
       <Modal
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         card={selectedCard}
+      />
+
+      {/* TikTok Modal */}
+      <TikTokModal
+        isOpen={showTikTokModal}
+        onClose={() => setShowTikTokModal(false)}
       />
     </div>
   );
