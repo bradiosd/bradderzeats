@@ -4,21 +4,21 @@ export const config = {
   apiUrl: process.env.REACT_APP_API_URL || 'http://localhost:3000/api',
 
   // App metadata
-  appName: 'Bradders Eats',
+  appName: 'Bradderz Eats',
   appDescription: 'Find the best food discount codes',
 
   // Theme settings
   theme: {
     defaultTheme: 'light',
-    storageKey: 'bradders-theme',
+    storageKey: 'bradderz-theme',
   },
 
   // Social media links
   socialLinks: {
-    instagram: 'https://instagram.com/bradderseats',
-    facebook: 'https://facebook.com/bradderseats',
-    youtube: 'https://youtube.com/bradderseats',
-    tiktok: 'https://tiktok.com/@bradderseats',
+    instagram: 'https://instagram.com/bradderzeats',
+    facebook: 'https://facebook.com/bradderzeats',
+    youtube: 'https://youtube.com/@bradderzeats',
+    tiktok: 'https://tiktok.com/@bradderzeats',
   },
 
   // Analytics configuration

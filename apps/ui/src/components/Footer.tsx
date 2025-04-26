@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
   return (
     <footer className={`py-6 ${isDarkMode ? 'text-brand-light/70' : 'text-brand-dark-green/70'}`}>
       <div className="container mx-auto text-center">
-        <p>© {new Date().getFullYear()} Bradders Eats. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Bradderz Eats. All rights reserved.</p>
         <div className="mt-2 text-sm">
           <a
             href="/privacy"
