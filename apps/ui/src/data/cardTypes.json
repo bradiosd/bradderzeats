@@ -19,6 +19,16 @@
       "id": "cashback",
       "name": "Cashback",
       "icon": "💰"
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "icon": "📦"
+    },
+    {
+      "id": "rider-equipment",
+      "name": "Rider Equipment",
+      "icon": "🚴"
     }
   ],
   "cards": [
@@ -32,15 +42,17 @@
       "backgroundColor": "#F8F3ED",
       "backgroundImage": "/affiliates/cookfood-bg.jpg",
       "overlayOpacity": 0.7,
-      "logo": {
-        "src": "/affiliates/cookfood-logo.png",
-        "alt": "COOK Food Service Logo",
-        "size": {
-          "width": "350px",
-          "height": "auto"
-        },
-        "invert": true
-      },
+      "images": [
+        {
+          "src": "/affiliates/cookfood-logo.png",
+          "alt": "COOK Food Service Logo",
+          "size": {
+            "width": "350px",
+            "height": "auto"
+          },
+          "invert": true
+        }
+      ],
       "url": "https://cookfood.mention-me.com/m/ol/sd4iv-brad-bird"
     },
     {
@@ -53,16 +65,60 @@
       "backgroundColor": "#FFFFFF",
       "backgroundImage": null,
       "overlayOpacity": 0.1,
-      "logo": {
-        "src": "/affiliates/topcashback-logo.svg",
-        "alt": "TopCashback Logo",
-        "size": {
-          "width": "300px",
-          "height": "auto"
-        },
-        "invert": false
-      },
+      "images": [
+        {
+          "src": "/affiliates/topcashback-logo.svg",
+          "alt": "TopCashback Logo",
+          "size": {
+            "width": "300px",
+            "height": "auto"
+          },
+          "invert": false
+        }
+      ],
       "url": "https://www.topcashback.co.uk/ref/bb1990"
+    },
+    {
+      "title": "GoPro Hero 12 Black",
+      "types": [
+        "amazon",
+        "rider-equipment"
+      ],
+      "tagline": "Capture your rides in stunning 5.3K video with the latest GoPro Hero 12 Black",
+      "description": "The GoPro Hero 12 Black features 5.3K video, 27MP photos, HyperSmooth 6.0 stabilization, and HDR video. Perfect for capturing your cycling adventures with incredible detail and stability.",
+      "backgroundColor": "#FFFFFF",
+      "backgroundImage": null,
+      "overlayOpacity": 0,
+      "images": [
+        {
+          "src": "/amazon/B07P9ZBV31/1.png",
+          "alt": "GoPro Hero 12 Black Main View",
+          "size": {
+            "width": "300px",
+            "height": "auto"
+          },
+          "invert": false
+        },
+        {
+          "src": "/amazon/B07P9ZBV31/2.png",
+          "alt": "GoPro Hero 12 Black Front View",
+          "size": {
+            "width": "300px",
+            "height": "auto"
+          },
+          "invert": false
+        },
+        {
+          "src": "/amazon/B07P9ZBV31/3.png",
+          "alt": "GoPro Hero 12 Black Side View",
+          "size": {
+            "width": "300px",
+            "height": "auto"
+          },
+          "invert": false
+        }
+      ],
+      "url": "https://www.amazon.co.uk/dp/B07P9ZBV31?tag=128bits0e-21&linkCode=ll1&linkId=630fd95fb0779e76fad1bf756aaa514f&language=en_GB&ref_=as_li_ss_tl"
     }
   ]
 }

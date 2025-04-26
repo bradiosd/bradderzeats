@@ -1,15 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Card } from '../types';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { useSwipe } from '../hooks/useSwipe';
+import { useTheme } from './theme-provider';
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   card: Card | null;
-  isDarkMode: boolean;
 }
 
-function Modal({ isOpen, onClose, card, isDarkMode }: ModalProps) {
+function Modal({ isOpen, onClose, card }: ModalProps) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { theme } = useTheme();
+  const isDarkMode = theme === 'dark';
+
+  const handlePreviousImage = () => {
+    if (!card) return;
+    setCurrentImageIndex((prev) => (prev === 0 ? card.images.length - 1 : prev - 1));
+  };
+
+  const handleNextImage = () => {
+    if (!card) return;
+    setCurrentImageIndex((prev) => (prev === card.images.length - 1 ? 0 : prev + 1));
+  };
+
+  const { onTouchStart, onTouchMove, onTouchEnd } = useSwipe(handleNextImage, handlePreviousImage);
+
   if (!card) return null;
 
   return (
@@ -54,17 +72,42 @@ function Modal({ isOpen, onClose, card, isDarkMode }: ModalProps) {
               className="absolute inset-0"
               style={{ backgroundColor: `rgba(0, 0, 0, ${card.overlayOpacity})` }}
             />
-            {/* Logo Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <img
-                src={card.logo.src}
-                alt={card.logo.alt}
-                style={{
-                  width: card.logo.size.width,
-                  height: card.logo.size.height
-                }}
-                className={`object-contain ${card.logo.invert ? 'invert' : ''}`}
-              />
+            {/* Images Overlay */}
+            <div
+              className="absolute inset-0 flex items-center justify-center p-4"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
+              {card.images.length > 1 && (
+                <>
+                  <button
+                    onClick={handlePreviousImage}
+                    className={`absolute left-4 z-10 p-2 rounded-full ${isDarkMode
+                      ? 'bg-brand-black/50 text-brand-light hover:bg-brand-dark-green'
+                      : 'bg-white/50 text-brand-dark-green hover:bg-white'
+                      }`}
+                  >
+                    <ChevronLeftIcon className="h-6 w-6" />
+                  </button>
+                  <button
+                    onClick={handleNextImage}
+                    className={`absolute right-4 z-10 p-2 rounded-full ${isDarkMode
+                      ? 'bg-brand-black/50 text-brand-light hover:bg-brand-dark-green'
+                      : 'bg-white/50 text-brand-dark-green hover:bg-white'
+                      }`}
+                  >
+                    <ChevronRightIcon className="h-6 w-6" />
+                  </button>
+                </>
+              )}
+              <div className="w-full h-full flex items-center justify-center">
+                <img
+                  src={card.images[currentImageIndex].src}
+                  alt={card.images[currentImageIndex].alt}
+                  className={`max-h-full max-w-full object-contain ${card.images[currentImageIndex].invert ? 'invert' : ''}`}
+                />
+              </div>
             </div>
           </div>
 
@@ -100,7 +143,7 @@ function Modal({ isOpen, onClose, card, isDarkMode }: ModalProps) {
                   : 'bg-brand-dark-green text-white hover:bg-brand-green'
                   }`}
               >
-                Claim
+                Visit
               </a>
             </div>
           </div>

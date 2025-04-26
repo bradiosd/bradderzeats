@@ -6,7 +6,7 @@ export interface Card {
   backgroundColor: string;
   backgroundImage: string | null;
   overlayOpacity: number;
-  logo: {
+  images: {
     src: string;
     alt: string;
     size: {
@@ -14,7 +14,7 @@ export interface Card {
       height: string;
     };
     invert: boolean;
-  };
+  }[];
   url: string;
 }
 
